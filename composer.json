@@ -1,6 +1,6 @@
 {
     "name": "it-m-h/logger",
-    "description": "Simple loger, use SQLITE3 - Database",
+    "description": "Simple logger, use SQLITE3 - Database",
     "keywords": [
         "simple",
         "logger",
