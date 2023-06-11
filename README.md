@@ -1,5 +1,5 @@
 # logger
-Simple loger
+Simple loger use SQLIT3 - Database.
 
 ## Installation
 Logger uses Composer to install and update:
@@ -7,3 +7,21 @@ Logger uses Composer to install and update:
 ```bash
 composer require it-m-h/logger
 ```
+## Konfiguration
+
+Change the file: vendor/it-m-h/logger/src/config.php
+
+```php
+    return [
+        "DB" => './../data/logging.sqlite3',
+        "TABLE" => 'log'
+    ];
+```
+
+## Use
+```php
+
+$logg = new \logger\Logger();
+$logg->write('Hello World!');
+
+``` 
