@@ -1,5 +1,5 @@
 # logger
-Simple loger use SQLIT3 - Database.
+Simple loger, use SQLITE3 - Database.
 
 ## Installation
 Logger uses Composer to install and update:
