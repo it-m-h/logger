@@ -1,0 +1,27 @@
+{
+    "name": "it-m-h/logger",
+    "description": "Simple Logger",
+    "keywords": [
+        "simple",
+        "logger",
+        "php",
+        "csv"
+    ],
+    "type": "library",
+    "license": "AGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "IT-Master Heizmann",
+            "email": "info@it-master.ch",
+            "homepage": "http://www.it-master.ch/"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "logger\\": "src/"
+        }
+    }
+}
