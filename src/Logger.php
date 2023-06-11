@@ -8,9 +8,10 @@ class Logger
     private $config = null;
     public function __construct(array $config = null)
     {
-        $this->config = include 'config.php';
         if ($config != null) {
             $this->config = $config;
+        } else {
+            $this->config = include('config.php');
         }
         if (!file_exists($this->config['DB'])) {
             $this->createDB();
