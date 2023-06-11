@@ -20,8 +20,13 @@ Change the file: vendor/it-m-h/logger/src/config.php
 
 ## Use
 ```php
-
-$logg = new \logger\Logger();
-$logg->write('Hello World!');
+$log = new \logger\Logger();
+$log->write('Hello World!');
 
 ``` 
+
+
+## show log
+```php
+ // TODO: show array with all log entries
+```
