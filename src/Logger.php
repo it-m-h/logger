@@ -31,6 +31,20 @@ class Logger
         $stmt->execute();
         $db->close();
     }
+    public function getData($limit = 100)
+    {
+        $db = new \SQLite3($this->config['DB']);
+        $sql = "SELECT * FROM ".$this->config['TABLE']." ORDER BY id DESC LIMIT :limit";
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':limit', $limit, SQLITE3_INTEGER);
+        $result = $stmt->execute();
+        $data = [];
+        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $data[] = $row;
+        }
+        $db->close();
+        return $data;
+    }
     private function createDB()
     {
         $db = new \SQLite3($this->config['DB']);
