@@ -45,6 +45,31 @@ class Logger
         $db->close();
         return $data;
     }
+        
+    /**
+     * getDataBy
+     *
+     * @param  string $column Name of column
+     * @return array
+     */
+    public function getDataBy($column)
+    {
+        $db = new \SQLite3($this->config['DB']);
+        $sql = "SELECT * FROM ".$this->config['TABLE']." ORDER BY logdate DESC";
+        $stmt = $db->prepare($sql);
+        $result = $stmt->execute();
+        $data = [];
+        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $data[] = $row;
+        }
+        $db->close();
+        $group = array();
+        foreach ($data as $value) {
+            $group[$value[$column]][] = $value;
+        }
+
+        return $group;
+    }
     private function createDB()
     {
         $db = new \SQLite3($this->config['DB']);
