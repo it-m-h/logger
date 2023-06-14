@@ -25,8 +25,18 @@ $log->write('Hello World!');
 
 ``` 
 
-
 ## show log
+Newest entries first, Limit 100
+
 ```php
- // TODO: show array with all log entries
+    echo '<pre>';
+    print_r($log->show());
+    echo '</pre>';
+```
+
+Group by column
+```php
+    echo '<pre>';
+    print_r($log->getDataBy('ip'));
+    echo '</pre>';
 ```
